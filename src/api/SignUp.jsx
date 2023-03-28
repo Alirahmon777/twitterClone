@@ -20,8 +20,8 @@ const SignUp = () => {
         enqueueSnackbar(email + " successfully registered", {
           variant: "success",
         });
-        localStorage.setItem("token", response.data.token);
         navigate("/home");
+        localStorage.setItem("token", response.data.token);
         return response.data;
       })
       .catch((error) => {
