@@ -21,6 +21,7 @@ const SignUp = () => {
           variant: "success",
         });
         localStorage.setItem("token", response.data.token);
+        navigate("/home");
         return response.data;
       })
       .catch((error) => {
@@ -32,9 +33,6 @@ const SignUp = () => {
           }
         );
         throw error;
-      })
-      .finally(() => {
-        navigate("/home");
       });
   };
 
