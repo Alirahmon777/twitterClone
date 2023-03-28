@@ -1,0 +1,55 @@
+.header {
+  @apply w-[268px] z-0;
+}
+
+.header__content {
+  @apply w-[268px] h-full pt-5 fixed top-0 flex flex-col gap-2 justify-between z-[1] border-r-[1px] border-[#D8D8D8];
+}
+
+.header__wrapper {
+  @apply pl-[12px];
+}
+
+.header__img {
+  @apply inline-block cursor-pointer py-3 px-2 hover:bg-[rgba(231,233,234,0.4)] rounded-full;
+  transition: all 0.2s linear;
+}
+
+.header__list {
+  @apply flex flex-col gap-[6px] mt-[10px] mb-3;
+}
+
+.header__item {
+  @apply flex;
+}
+
+.header__link {
+  @apply flex items-center gap-4 cursor-pointer py-3 pl-2 pr-7 hover:bg-[rgba(231,233,234,0.4)] rounded-full;
+  transition: all 0.2s linear;
+}
+
+.header__text {
+  @apply capitalize;
+}
+
+.header__btn {
+  @apply px-[90px] text-white py-4 font-sans font-bold text-[18px] rounded-[27.5px] bg-[#1D9BF0];
+  line-height: 24px;
+}
+
+.header__user {
+  @apply flex items-center justify-between py-2 pl-2 pr-3 mr-2 mb-3 hover:bg-[rgba(231,233,234,0.4)] rounded-full cursor-pointer;
+  transition: all 0.2s linear;
+}
+
+.header__box {
+  @apply flex gap-2 items-center;
+}
+
+.header__name {
+  @apply font-semibold text-base;
+}
+
+.header__email {
+  @apply opacity-60;
+}

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  :root {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full;
+  }
+
+  #root {
+    @apply flex h-full;
+  }
+
+  .container {
+    @apply w-[1625px] max-w-full mx-auto px-[15px];
+  }
+
+  .main {
+    @apply flex-grow;
+  }
+
+  ::selection {
+    @apply text-[rgb(253,253,253)] bg-[#1da1f2];
+  }
+
+  .after {
+    @apply after:w-full after:absolute after:bottom-0 after:left-0 after:bg-[#1da0f2] after:h-1 font-bold after:rounded-full;
+  }
+}
