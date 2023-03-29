@@ -27,12 +27,11 @@ import { Like, Media, Replice, Tweets } from "./pages/profile";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      {localStorage.getItem("token") ? (
-        <Route path="/" element={<Navigate to={"/home"} replace />} />
-      ) : (
-        <Route path="/" element={<Navigate to={"/api/signup"} replace />} />
-      )}
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Navigate to={"/home"} replace />} />
+      <Route
+        path="/"
+        element={<Layout user={localStorage.getItem("token") ? true : false} />}
+      >
         <Route path="home" element={<Home />} loader={postLoader} />
         <Route path="profile" element={<User />}>
           <Route path="likes" element={<Like />} />
@@ -48,8 +47,8 @@ const router = createBrowserRouter(
         <Route path="lists" element={<Lists />} />
       </Route>
       <Route path="*" element={<NotFound />} />
-      <Route path="api/login" element={<Login />} />
       <Route path="api/signup" element={<SignUp />} />
+      <Route path="api/login" element={<Login />} />
     </>
   )
 );

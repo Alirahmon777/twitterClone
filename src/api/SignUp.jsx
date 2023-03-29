@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { logo } from "../assets/svg";
 import axios from "axios";
 import { enqueueSnackbar } from "notistack";
@@ -8,6 +8,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
@@ -20,8 +21,8 @@ const SignUp = () => {
         enqueueSnackbar(email + " successfully registered", {
           variant: "success",
         });
-        navigate("/home");
         localStorage.setItem("token", response.data.token);
+        navigate("/");
         return response.data;
       })
       .catch((error) => {
@@ -35,7 +36,6 @@ const SignUp = () => {
         throw error;
       });
   };
-
   const [viewPassword, setViewPassword] = useState(true);
 
   function viewingPassword() {
@@ -61,7 +61,7 @@ const SignUp = () => {
               <rect width="24" height="24" x="0" y="0"></rect>
             </clipPath>
           </defs>
-          <g clip-path="url(#__lottie_element_89)">
+          <g clipPath="url(#__lottie_element_89)">
             <g
               transform="matrix(1,0,0,1,0,0)"
               opacity="1"
@@ -69,23 +69,23 @@ const SignUp = () => {
             >
               <g opacity="1" transform="matrix(1,0,0,1,12,16.5)">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill-opacity="0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fillOpacity="0"
                   stroke="rgb(0,0,0)"
-                  stroke-opacity="1"
-                  stroke-width="2"
+                  strokeOpacity="1"
+                  strokeWidth="2"
                   d=" M-7,-5.5 C-7,-5.5 7,-5.5 7,-5.5 C8.104000091552734,-5.5 9,-4.604000091552734 9,-3.5 C9,-3.5 9,3.5 9,3.5 C9,4.604000091552734 8.104000091552734,5.5 7,5.5 C7,5.5 -7,5.5 -7,5.5 C-8.104000091552734,5.5 -9,4.604000091552734 -9,3.5 C-9,3.5 -9,-3.5 -9,-3.5 C-9,-4.604000091552734 -8.104000091552734,-5.5 -7,-5.5z"
                 ></path>
               </g>
               <g opacity="1" transform="matrix(1,0,0,1,12,6.5)">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill-opacity="0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fillOpacity="0"
                   stroke="rgb(0,0,0)"
-                  stroke-opacity="1"
-                  stroke-width="2"
+                  strokeOpacity="1"
+                  strokeWidth="2"
                   d=" M-5,4.5 C-5,4.5 -5,0.5 -5,0.5 C-5,-2.260999917984009 -2.760999917984009,-4.5 0,-4.5 C2.76200008392334,-4.5 5,-2.260999917984009 5,0.5 C5,0.5 5,4.5 5,4.5"
                 ></path>
               </g>
@@ -113,7 +113,7 @@ const SignUp = () => {
               <rect width="24" height="24" x="0" y="0"></rect>
             </clipPath>
           </defs>
-          <g clip-path="url(#__lottie_element_89)">
+          <g clipPath="url(#__lottie_element_89)">
             <g
               transform="matrix(1,0,0,1,0,0)"
               opacity="1"
@@ -121,12 +121,12 @@ const SignUp = () => {
             >
               <g opacity="1" transform="matrix(1,0,0,1,12,16.5)">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill-opacity="0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fillOpacity="0"
                   stroke="rgb(0,0,0)"
-                  stroke-opacity="1"
-                  stroke-width="2"
+                  strokeOpacity="1"
+                  strokeWidth="2"
                   d=" M-7,-5.5 C-7,-5.5 7,-5.5 7,-5.5 C8.104000091552734,-5.5 9,-4.604000091552734 9,-3.5 C9,-3.5 9,3.5 9,3.5 C9,4.604000091552734 8.104000091552734,5.5 7,5.5 C7,5.5 -7,5.5 -7,5.5 C-8.104000091552734,5.5 -9,4.604000091552734 -9,3.5 C-9,3.5 -9,-3.5 -9,-3.5 C-9,-4.604000091552734 -8.104000091552734,-5.5 -7,-5.5z"
                 ></path>
               </g>
@@ -135,12 +135,12 @@ const SignUp = () => {
                 transform="matrix(0.9998349547386169,-0.018166514113545418,0.018166514113545418,0.9998349547386169,11.923500061035156,6.408583164215088)"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill-opacity="0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fillOpacity="0"
                   stroke="rgb(0,0,0)"
-                  stroke-opacity="1"
-                  stroke-width="2"
+                  strokeOpacity="1"
+                  strokeWidth="2"
                   d=" M-5,4.5 C-5,4.5 -5,0.5 -5,0.5 C-5,-2.260999917984009 -2.760999917984009,-4.5 0,-4.5 C2.555999994277954,-4.5 4.664000034332275,-2.5820000171661377 4.9629998207092285,-0.1080000028014183"
                 ></path>
               </g>

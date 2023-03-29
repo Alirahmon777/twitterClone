@@ -23,7 +23,6 @@ import { avatar } from "../../assets/images";
 import HeaderItem from "./HeaderItem";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-  const remove = () => localStorage.removeItem("token");
   return (
     <>
       <nav className="header__nav">
@@ -86,8 +85,8 @@ const Navbar = () => {
               width={"w-5"}
               ActiveSvg={nounLogin}
               text="Logout"
-              onClick={remove()}
-              to={"/"}
+              onClick={() => localStorage.removeItem("token")}
+              to={"/api/signup"}
             />
             <HeaderItem
               Svg={more}
