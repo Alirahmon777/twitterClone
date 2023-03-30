@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import { logo } from "../assets/svg";
 import axios from "axios";
 import { enqueueSnackbar } from "notistack";
@@ -7,7 +6,6 @@ import { enqueueSnackbar } from "notistack";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -21,8 +19,8 @@ const SignUp = () => {
         enqueueSnackbar(email + " successfully registered", {
           variant: "success",
         });
+        window.location.pathname = "/home";
         localStorage.setItem("token", response.data.token);
-        navigate("/");
         return response.data;
       })
       .catch((error) => {

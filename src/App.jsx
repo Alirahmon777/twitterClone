@@ -11,6 +11,7 @@ import {
   NotFound,
   Login,
   SignUp,
+  Favorite,
 } from "./pages";
 import {
   createBrowserRouter,
@@ -23,6 +24,7 @@ import Layout from "./layout/Layout";
 import { useState } from "react";
 import { postLoader } from "./components";
 import { Like, Media, Replice, Tweets } from "./pages/profile";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +32,14 @@ const router = createBrowserRouter(
       <Route path="/" element={<Navigate to={"/home"} replace />} />
       <Route
         path="/"
-        element={<Layout user={localStorage.getItem("token") ? true : false} />}
+        element={
+          <ProtectedRoute
+            user={localStorage.getItem("token") ? true : false}
+            redirectPath={"/api/signup"}
+          >
+            <Layout />
+          </ProtectedRoute>
+        }
       >
         <Route path="home" element={<Home />} loader={postLoader} />
         <Route path="profile" element={<User />}>
@@ -45,7 +54,9 @@ const router = createBrowserRouter(
         <Route path="more" element={<More />} />
         <Route path="messages" element={<Messages />} />
         <Route path="lists" element={<Lists />} />
+        <Route path="wishes" element={<Favorite />} />
       </Route>
+
       <Route path="*" element={<NotFound />} />
       <Route path="api/signup" element={<SignUp />} />
       <Route path="api/login" element={<Login />} />

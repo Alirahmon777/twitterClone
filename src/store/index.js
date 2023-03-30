@@ -1,17 +1,16 @@
 import { combineReducers, createStore } from "redux";
 
-export const AUTH = "auth";
+export const ADD = "add";
 
-const authReducer = (state = false, action) => {
-  if (action.type === AUTH) {
-    console.log(action.payload);
+const favoriteReducer = (state = false, action) => {
+  if (action.type === ADD) {
     return action.payload;
   }
   return state;
 };
 
 const combineReducer = combineReducers({
-  auth: authReducer,
+  favorite: favoriteReducer,
 });
 
 export const store = createStore(

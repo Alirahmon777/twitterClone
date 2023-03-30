@@ -1,10 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { ProfileMain, ProfileHead, Aside } from "../../components";
-import AsideFooter from "../../components/aside/AsideFooter";
-import AsideLike from "../../components/aside/AsideLike";
-import AsidePosts from "../../components/aside/AsidePosts";
-import AsideTrends from "../../components/aside/AsideTrends";
+import {
+  ProfileMain,
+  ProfileHead,
+  Aside,
+  AsidePosts,
+  AsideLike,
+  AsideTrends,
+  AsideFooter,
+} from "../../components";
 
 const User = () => {
   return (

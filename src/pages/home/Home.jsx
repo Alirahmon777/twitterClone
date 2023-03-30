@@ -1,8 +1,13 @@
 import React from "react";
-import { Aside, MainHead, MainPosts, MainUser } from "../../components";
-import AsideFooter from "../../components/aside/AsideFooter";
-import AsideLike from "../../components/aside/AsideLike";
-import AsideTrends from "../../components/aside/AsideTrends";
+import {
+  Aside,
+  AsideFooter,
+  AsideLike,
+  AsideTrends,
+  MainHead,
+  MainPosts,
+  MainUser,
+} from "../../components";
 
 const Home = () => {
   return (

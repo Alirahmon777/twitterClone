@@ -9,7 +9,9 @@ import More from "./more/More";
 import NotFound from "./NotFound/NotFound";
 import Login from "../api/Login";
 import SignUp from "../api/SignUp";
+import Favorite from "./favorites/Favorite";
 export {
+  Favorite,
   Explore,
   Login,
   SignUp,
