@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import {
   Aside,
   AsideFooter,
@@ -37,9 +37,9 @@ const Wishes = () => {
 
   return (
     <>
-      <div className="flex-[1_1_65%] p-5">
+      <div className="flex-[1_1_65%]">
         <ul>
-          {resolvedPosts.map((data, i) => (
+          {favorites.map((data, i) => (
             <MainPost data={data} key={i} addFav={addFavoriteHandler} />
           ))}
         </ul>
