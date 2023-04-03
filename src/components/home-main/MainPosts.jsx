@@ -1,17 +1,36 @@
-import axios from "axios";
 import { Suspense } from "react";
 import { useLoaderData, defer, Await } from "react-router-dom";
 import MainPost from "./MainPost";
 import Skeleton from "../../utils/Skeleton";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD, REMOVE } from "../../store";
 
 const MainPosts = () => {
   const { posts } = useLoaderData();
-  // const [totalCount, setTotalCount] = useState(0);
+  const favorites = useSelector((prev) => prev.favorite);
 
-  // const scrollHandler = (e) => {
-  //   console.log("scrollHandler");
-  // };
+  const dispatch = useDispatch();
 
+  const addFavoriteHandler = (tweet) => {
+    let haveProduct = false;
+    favorites.forEach((favorite) => {
+      if (favorite.id === tweet.id) {
+        haveProduct = true;
+      }
+    });
+
+    if (haveProduct) {
+      dispatch({
+        type: REMOVE,
+        payload: tweet,
+      });
+    } else {
+      dispatch({
+        type: ADD,
+        payload: tweet,
+      });
+    }
+  };
   return (
     <ul>
       <Suspense
@@ -30,7 +49,7 @@ const MainPosts = () => {
           {(resolvedPosts) => (
             <>
               {resolvedPosts.map((data, i) => (
-                <MainPost data={data} key={i} />
+                <MainPost data={data} key={i} addFav={addFavoriteHandler} />
               ))}
             </>
           )}

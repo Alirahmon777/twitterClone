@@ -7,11 +7,10 @@ import {
   Lists,
   Messages,
   More,
-  Notification,
   NotFound,
   Login,
   SignUp,
-  Favorite,
+  Wishes,
 } from "./pages";
 import {
   createBrowserRouter,
@@ -50,11 +49,10 @@ const router = createBrowserRouter(
         </Route>
         <Route path="explore" element={<Explore />} />
         <Route path="bookmarks" element={<Bookmarks />} />
-        <Route path="notification" element={<Notification />} />
+        <Route path="wishes" element={<Wishes />} />
         <Route path="more" element={<More />} />
         <Route path="messages" element={<Messages />} />
         <Route path="lists" element={<Lists />} />
-        <Route path="wishes" element={<Favorite />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

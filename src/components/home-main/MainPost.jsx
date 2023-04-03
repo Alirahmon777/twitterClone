@@ -2,13 +2,14 @@ import React from "react";
 import {
   comment,
   like,
+  likeFill,
   retweet,
   share,
   statistics,
   threeDots,
 } from "../../assets/svg";
 
-const MainPost = ({ data }) => {
+const MainPost = ({ data, addFav }) => {
   const { title, username, postimage, avatar, post } = data;
 
   function min() {
@@ -57,8 +58,8 @@ const MainPost = ({ data }) => {
             <button>
               <img src={retweet} alt="retweet icon" />
             </button>
-            <button>
-              <img src={like} alt="like icon" />
+            <button onClick={() => addFav(data)}>
+              <img src={data.isfav ? likeFill : like} alt="like icon" />
             </button>
             <button>
               <img src={share} alt="share icon" />

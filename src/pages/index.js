@@ -3,15 +3,13 @@ import Bookmarks from "./bookmarks/Bookmarks";
 import Home from "./home/Home";
 import Lists from "./lists/Lists";
 import Messages from "./messages/Messages";
-import Notification from "./notification/Notification";
+import Wishes from "./wishes/Wishes";
 import User from "./profile/User";
 import More from "./more/More";
 import NotFound from "./NotFound/NotFound";
 import Login from "../api/Login";
 import SignUp from "../api/SignUp";
-import Favorite from "./favorites/Favorite";
 export {
-  Favorite,
   Explore,
   Login,
   SignUp,
@@ -19,7 +17,7 @@ export {
   Home,
   Lists,
   Messages,
-  Notification,
+  Wishes,
   User,
   More,
   NotFound,

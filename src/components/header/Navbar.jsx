@@ -10,14 +10,14 @@ import {
   listFill,
   messages,
   messagesFill,
-  notification,
-  notificationFill,
   profile,
   profileFill,
   logo,
   more,
   threeDots,
   nounLogin,
+  like,
+  likeFillBlack,
 } from "../../assets/svg";
 import { avatar } from "../../assets/images";
 import HeaderItem from "./HeaderItem";
@@ -46,10 +46,10 @@ const Navbar = () => {
               width={"w-5"}
             />
             <HeaderItem
-              Svg={notification}
-              ActiveSvg={notificationFill}
-              text="notification"
-              to={"/notification"}
+              Svg={like}
+              ActiveSvg={likeFillBlack}
+              text="Favorites"
+              to={"/wishes"}
               width={"w-5"}
             />
             <HeaderItem

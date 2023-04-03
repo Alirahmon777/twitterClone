@@ -10,6 +10,7 @@ import home from "./home.svg";
 import homeFill from "./home-fill.svg";
 import like from "./like.svg";
 import likeFill from "./like-fill.svg";
+import likeFillBlack from "./like-fill-black.svg";
 import list from "./lists.svg";
 import listFill from "./lists-out.svg";
 import messages from "./messages.svg";
@@ -75,6 +76,7 @@ export {
   customize,
   like,
   likeFill,
+  likeFillBlack,
   logo,
   more,
   retweet,
